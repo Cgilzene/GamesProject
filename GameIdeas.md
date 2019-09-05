@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Game 1:
 Shooting Aliens - Math Game
 
@@ -24,3 +25,7 @@ Why the game was chosen:
 I think this is a game that is challenging but just within my knowledge of C#
 This will help to me practice a few things that I find to wrap my head around and 
 link togehter. 
+=======
+# GamesProject
+Game project 
+>>>>>>> f0bb78e5efca0443773cce2ff62ce50f961fed40
