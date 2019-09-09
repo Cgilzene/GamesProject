@@ -26,6 +26,14 @@ I think this is a game that is challenging but just within my knowledge of C#
 This will help to me practice a few things that I find to wrap my head around and 
 link togehter. 
 
+Day 1:
+Project was created
+Added images to the WPF window that generate randomly
+A timer was implemented 
+Experimented with different methods of controlloing images
+Start button functional
+
+
 
 Game project 
 >>>>>>> f0bb78e5efca0443773cce2ff62ce50f961fed40
