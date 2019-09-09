@@ -1,0 +1,15 @@
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\bin\Debug\AlienGames.exe.config
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\bin\Debug\AlienGames.exe
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\bin\Debug\AlienGames.pdb
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames.csprojAssemblyReference.cache
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\MainWindow.g.cs
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\App.g.cs
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames_MarkupCompile.cache
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames_MarkupCompile.lref
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\MainWindow.baml
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames.g.resources
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames.Properties.Resources.resources
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames.csproj.GenerateResource.cache
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames.csproj.CoreCompileInputs.cache
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames.exe
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGames\obj\Debug\AlienGames.pdb
