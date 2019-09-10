@@ -7,15 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <Image x:Key="oneEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\One_eye_alien.jpg" Height="80" Width="80" />
-        <Image x:Key="twoEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\two_eyes_alien2.jpg" Height="80" Width="80" />
-        <Image x:Key="threeEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\three_eye_alien.jpg" Height="80" Width="80" />
-        <Image x:Key="fourEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\four_eye_monster.jpg" Height="80" Width="80" />
-        <Image x:Key="fiveEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\five_eye_alien.jpeg" Height="80" Width="80" />
-        <Image x:Key="sixEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\six_eye_alien2.jpg" Height="80" Width="80" />
-        <Image x:Key="sevenEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\seven_eye_alien.jpg" Height="80" Width="80" />
-        <Image x:Key="eightEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\eight_eye_alien.jpg" Height="80" Width="80" />
-        <Image x:Key="nineEye" Source="C:\Users\Canute Gilzene\Pictures\Pics\nine_eye_alien.jpg" Height="80" Width="80" />
+        <Image x:Key="oneEye" Tag ="1" Source="C:\Users\Canute Gilzene\Pictures\Pics\One_eye_alien.jpg" Height="80" Width="80" />
+        <Image x:Key="twoEye" Tag="2" Source="C:\Users\Canute Gilzene\Pictures\Pics\two_eyes_alien2.jpg" Height="80" Width="80" />
+        <Image x:Key="threeEye" Tag="3" Source="C:\Users\Canute Gilzene\Pictures\Pics\three_eye_alien.jpg" Height="80" Width="80" />
+        <Image x:Key="fourEye" Tag="4" Source="C:\Users\Canute Gilzene\Pictures\Pics\four_eye_monster.jpg" Height="80" Width="80" />
+        <Image x:Key="fiveEye" Tag="5" Source="C:\Users\Canute Gilzene\Pictures\Pics\five_eye_alien.jpeg" Height="80" Width="80" />
+        <Image x:Key="sixEye" Tag="6" Source="C:\Users\Canute Gilzene\Pictures\Pics\six_eye_alien2.jpg" Height="80" Width="80" />
+        <Image x:Key="sevenEye" Tag="7" Source="C:\Users\Canute Gilzene\Pictures\Pics\seven_eye_alien.jpg" Height="80" Width="80" />
+        <Image x:Key="eightEye" Tag="8" Source="C:\Users\Canute Gilzene\Pictures\Pics\eight_eye_alien.jpg" Height="80" Width="80" />
+        <Image x:Key="nineEye" Tag="9" Source="C:\Users\Canute Gilzene\Pictures\Pics\nine_eye_alien.jpg" Height="80" Width="80" />
       
     </Window.Resources>
     <Grid ShowGridLines="True">
@@ -35,17 +35,18 @@
         <TextBlock Text="Merging top 4 Cells" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Grid.Column="1" Height="24" Margin="120.6,35,120.2,38.6" Width="156"></TextBlock>
         <TextBlock Text="Rowspan=2" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
         <TextBlock Text="Rowspan=9" Grid.Row="2" Grid.Column="1"  Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="9.6,9.6,9.6,0" Grid.ColumnSpan="3" Height="218" Width="576"></TextBlock>
-        <Image Name="picBox1" Grid.Column="1" Grid.Row="1"></Image>
-        <Image Name="picBox2" Grid.Column="1" Grid.Row="2"></Image>
-        <Image Name="picBox3" Grid.Column="1" Grid.Row="3"></Image>
-        <Image Name="picBox4" Grid.Column="2" Grid.Row="1"></Image>
-        <Image Name="picBox5" Grid.Column="2" Grid.Row="2"></Image>
-        <Image Name="picBox6" Grid.Column="2" Grid.Row="3"></Image>
-        <Image Name="picBox7" Grid.Column="3" Grid.Row="1"></Image>
-        <Image Name="picBox8" Grid.Column="3" Grid.Row="2"></Image>
-        <Image Name="picBox9" Grid.Column="3" Grid.Row="3"></Image>
+        <Button Name="imagePos1" Grid.Column="1" Grid.Row="1"></Button>
+        <Button Name="imagePos2" Grid.Column="1" Grid.Row="2"></Button>
+        <Button Name="imagePos3" Grid.Column="1" Grid.Row="3" Click="ImagePos3_Click"></Button>
+        <Button Name="imagePos4" Grid.Column="2" Grid.Row="1"></Button>
+        <Button Name="imagePos5" Grid.Column="2" Grid.Row="2"></Button>
+        <Button Name="imagePos6" Grid.Column="2" Grid.Row="3"></Button>
+        <Button Name="imagePos7" Grid.Column="3" Grid.Row="1"></Button>
+        <Button Name="imagePos8" Grid.Column="3" Grid.Row="2"></Button>
+        <Button Name="imagePos9" Grid.Column="3" Grid.Row="3"></Button>
         <Label x:Name="Countdown" Content="00:00" Grid.Column="3" Grid.Row="0" FontFamily="Segoe UI" FontSize="30"
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Button Grid.Column="2" Grid.Row="4" Background ="Green" Click="Button_Click_1"></Button>
         
        <!-- <Button Name="btn2" Grid.Column="1" Grid.Row="2" Background ="White" >
             <DynamicResource ResourceKey="twoEye"/>
