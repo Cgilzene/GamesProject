@@ -33,6 +33,11 @@ A timer was implemented
 Experimented with different methods of controlloing images
 Start button functional
 
+Day 2: 
+Individual images were assigned values
+Used a different methods of displaying images using buttons
+
+
 
 
 Game project 
