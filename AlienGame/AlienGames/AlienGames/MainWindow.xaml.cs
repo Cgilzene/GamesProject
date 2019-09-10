@@ -21,10 +21,9 @@ namespace AlienGames
     /// </summary>
     public partial class MainWindow : Window
     {
-        const int valueOfImange = 9;
+        
         private int time = 40;
         private DispatcherTimer timer;
-        String[] imageFilePath;
 
         public MainWindow()
         {
@@ -81,16 +80,59 @@ namespace AlienGames
         }
 
 
-        public int addClickedNumber(int num1, int num2)
+
+        private void myJob(object sender)
         {
+            Button targetButton = (sender as Button);
+            // Your code here
+            if (targetButton != null && targetButton.Name == "Button1")
+            {
+                //do your 
+            }
            
-            int clickedValue1 = num1;
-            int clickedValue2 = num2; 
-            int sum = clickedValue1 + clickedValue2;
-            return sum;
         }
 
-        
+
+        public void addClickedNumber()
+        {
+            Random randomValue = new Random();
+            int num1;
+            int num2;
+            // num1 = randomValue.Next(1, 9);
+            // num2 = randomValue.Next(1, 9);
+            num1 = int.Parse(imagePos3.Tag.ToString());
+            num2 = int.Parse(imagePos4.Tag.ToString());
+            int sumOf = num1 + num2;
+
+            VeiwValue.Text = sumOf.ToString();
+        }
+
+     
+
+       /* private void ImagePos1_Click(object sender, RoutedEventArgs e)
+        {
+            int sum = int.Parse(imagePos2.Tag.ToString()) + int.Parse(imagePos4.Tag.ToString());
+            VeiwValue.Text = sum.ToString();
+            myJob(sender);
+        }*///This button is in position 1,1
+
+        private void Start_Button_Click(object sender, RoutedEventArgs e) //This button starts the game
+        {
+
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += stopWatch;
+            //dt.Stop();
+            // path = new string[Value_Of_Image];      // _diceImages is set to the value given to NUMBER_OF_FACES
+            // testRandomImageGen3();
+            randomImageGen();
+            timer.Start();
+
+        }
+
+        // From this point on I'm testing and refactoring.
+
+
 
         public void randomImageGen()
         {
@@ -720,116 +762,329 @@ namespace AlienGames
                     //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg"));
                     break;
             }
+
+            switch (bttn7)
+            {
+                case 1:
+                    BitmapImage image71 = new BitmapImage();
+                    Image img71 = new Image();
+                    image71.BeginInit();
+                    image71.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\One_eye_alien.jpg");
+                    image71.EndInit();
+                    img71.Source = image71;
+                    imagePos7.Content = img71;
+                    imagePos7.Tag = 1;
+                    break;
+                case 2:
+                    BitmapImage image72 = new BitmapImage();
+                    Image img72 = new Image();
+                    image72.BeginInit();
+                    image72.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg");
+                    image72.EndInit();
+                    img72.Source = image72;
+                    imagePos7.Content = img72;
+                    imagePos7.Tag = 2;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg"));
+                    break;
+                case 3:
+                    BitmapImage image73 = new BitmapImage();
+                    Image img73 = new Image();
+                    image73.BeginInit();
+                    image73.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien.jpg");
+                    image73.EndInit();
+                    img73.Source = image73;
+                    imagePos7.Content = img73;
+                    imagePos7.Tag = 3;
+                    break;
+                case 4:
+                    BitmapImage image74 = new BitmapImage();
+                    Image img74 = new Image();
+                    image74.BeginInit();
+                    image74.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg");
+                    image74.EndInit();
+                    img74.Source = image74;
+                    imagePos6.Content = img74;
+                    imagePos6.Tag = 4;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg"));
+                    break;
+                case 5:
+                    BitmapImage image75 = new BitmapImage();
+                    Image img75 = new Image();
+                    image75.BeginInit();
+                    image75.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpeg");
+                    image75.EndInit();
+                    img75.Source = image75;
+                    imagePos7.Content = img75;
+                    imagePos7.Tag = 5;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpeg"));
+                    break;
+                case 6:
+                    BitmapImage image76 = new BitmapImage();
+                    Image img76 = new Image();
+                    image76.BeginInit();
+                    image76.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg");
+                    image76.EndInit();
+                    img76.Source = image76;
+                    imagePos7.Content = img76;
+                    imagePos7.Tag = 6;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg"));
+                    break;
+                case 7:
+                    BitmapImage image77 = new BitmapImage();
+                    Image img77 = new Image();
+                    image77.BeginInit();
+                    image77.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg");
+                    image77.EndInit();
+                    img77.Source = image77;
+                    imagePos7.Content = img77;
+                    imagePos7.Tag = 7;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg"));
+                    break;
+                case 8:
+                    BitmapImage image78 = new BitmapImage();
+                    Image img78 = new Image();
+                    image78.BeginInit();
+                    image78.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg");
+                    image78.EndInit();
+                    img78.Source = image78;
+                    imagePos7.Content = img78;
+                    imagePos7.Tag = 8;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg"));
+                    break;
+                case 9:
+                    BitmapImage image79 = new BitmapImage();
+                    Image img79 = new Image();
+                    image79.BeginInit();
+                    image79.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg");
+                    image79.EndInit();
+                    img79.Source = image79;
+                    imagePos7.Content = img79;
+                    imagePos7.Tag = 9;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg"));
+                    break;
+            }
+            switch (bttn6)
+            {
+                case 1:
+                    BitmapImage image81 = new BitmapImage();
+                    Image img81 = new Image();
+                    image81.BeginInit();
+                    image81.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\One_eye_alien.jpg");
+                    image81.EndInit();
+                    img81.Source = image81;
+                    imagePos8.Content = img81;
+                    imagePos8.Tag = 1;
+                    break;
+                case 2:
+                    BitmapImage image82 = new BitmapImage();
+                    Image img82 = new Image();
+                    image82.BeginInit();
+                    image82.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg");
+                    image82.EndInit();
+                    img82.Source = image82;
+                    imagePos8.Content = img82;
+                    imagePos8.Tag = 2;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg"));
+                    break;
+                case 3:
+                    BitmapImage image83 = new BitmapImage();
+                    Image img83 = new Image();
+                    image83.BeginInit();
+                    image83.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien.jpg");
+                    image83.EndInit();
+                    img83.Source = image83;
+                    imagePos8.Content = img83;
+                    imagePos8.Tag = 3;
+                    break;
+                case 4:
+                    BitmapImage image84 = new BitmapImage();
+                    Image img84 = new Image();
+                    image84.BeginInit();
+                    image84.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg");
+                    image84.EndInit();
+                    img84.Source = image84;
+                    imagePos8.Content = img84;
+                    imagePos8.Tag = 4;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg"));
+                    break;
+                case 5:
+                    BitmapImage image85 = new BitmapImage();
+                    Image img85 = new Image();
+                    image85.BeginInit();
+                    image85.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpeg");
+                    image85.EndInit();
+                    img85.Source = image85;
+                    imagePos8.Content = img85;
+                    imagePos8.Tag = 5;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpeg"));
+                    break;
+                case 6:
+                    BitmapImage image86 = new BitmapImage();
+                    Image img86 = new Image();
+                    image86.BeginInit();
+                    image86.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg");
+                    image86.EndInit();
+                    img86.Source = image86;
+                    imagePos8.Content = img86;
+                    imagePos8.Tag = 6;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg"));
+                    break;
+                case 7:
+                    BitmapImage image87 = new BitmapImage();
+                    Image img87 = new Image();
+                    image87.BeginInit();
+                    image87.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg");
+                    image87.EndInit();
+                    img87.Source = image87;
+                    imagePos8.Content = img87;
+                    imagePos8.Tag = 7;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg"));
+                    break;
+                case 8:
+                    BitmapImage image88 = new BitmapImage();
+                    Image img88 = new Image();
+                    image88.BeginInit();
+                    image88.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg");
+                    image88.EndInit();
+                    img88.Source = image88;
+                    imagePos8.Content = img88;
+                    imagePos8.Tag = 8;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg"));
+                    break;
+                case 9:
+                    BitmapImage image89 = new BitmapImage();
+                    Image img89 = new Image();
+                    image89.BeginInit();
+                    image89.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg");
+                    image89.EndInit();
+                    img89.Source = image89;
+                    imagePos8.Content = img89;
+                    imagePos8.Tag = 9;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg"));
+                    break;
+            }
+            switch (bttn9)
+            {
+                case 1:
+                    BitmapImage image91 = new BitmapImage();
+                    Image img91 = new Image();
+                    image91.BeginInit();
+                    image91.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\One_eye_alien.jpg");
+                    image91.EndInit();
+                    img91.Source = image91;
+                    imagePos9.Content = img91;
+                    imagePos9.Tag = 1;
+                    break;
+                case 2:
+                    BitmapImage image92 = new BitmapImage();
+                    Image img92 = new Image();
+                    image92.BeginInit();
+                    image92.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg");
+                    image92.EndInit();
+                    img92.Source = image92;
+                    imagePos9.Content = img92;
+                    imagePos9.Tag = 2;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg"));
+                    break;
+                case 3:
+                    BitmapImage image93 = new BitmapImage();
+                    Image img93 = new Image();
+                    image93.BeginInit();
+                    image93.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien.jpg");
+                    image93.EndInit();
+                    img93.Source = image93;
+                    imagePos9.Content = img93;
+                    imagePos9.Tag = 3;
+                    break;
+                case 4:
+                    BitmapImage image94 = new BitmapImage();
+                    Image img94 = new Image();
+                    image94.BeginInit();
+                    image94.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg");
+                    image94.EndInit();
+                    img94.Source = image94;
+                    imagePos9.Content = img94;
+                    imagePos9.Tag = 4;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg"));
+                    break;
+                case 5:
+                    BitmapImage image65 = new BitmapImage();
+                    Image img65 = new Image();
+                    image65.BeginInit();
+                    image65.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpeg");
+                    image65.EndInit();
+                    img65.Source = image65;
+                    imagePos6.Content = img65;
+                    imagePos6.Tag = 5;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpeg"));
+                    break;
+                case 6:
+                    BitmapImage image96 = new BitmapImage();
+                    Image img96 = new Image();
+                    image96.BeginInit();
+                    image96.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg");
+                    image96.EndInit();
+                    img96.Source = image96;
+                    imagePos9.Content = img96;
+                    imagePos9.Tag = 6;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg"));
+                    break;
+                case 7:
+                    BitmapImage image97 = new BitmapImage();
+                    Image img97 = new Image();
+                    image97.BeginInit();
+                    image97.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg");
+                    image97.EndInit();
+                    img97.Source = image97;
+                    imagePos6.Content = img97;
+                    imagePos6.Tag = 7;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg"));
+                    break;
+                case 8:
+                    BitmapImage image98 = new BitmapImage();
+                    Image img98 = new Image();
+                    image98.BeginInit();
+                    image98.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg");
+                    image98.EndInit();
+                    img98.Source = image98;
+                    imagePos9.Content = img98;
+                    imagePos9.Tag = 8;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg"));
+                    break;
+                case 9:
+                    BitmapImage image99 = new BitmapImage();
+                    Image img99 = new Image();
+                    image99.BeginInit();
+                    image99.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg");
+                    image99.EndInit();
+                    img99.Source = image99;
+                    imagePos9.Content = img99;
+                    imagePos9.Tag = 9;
+                    //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg"));
+                    break;
+            }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Check_Click(object sender, RoutedEventArgs e)
         {
-
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Tick += stopWatch;
-            //dt.Stop();
-            // path = new string[Value_Of_Image];      // _diceImages is set to the value given to NUMBER_OF_FACES
-           // testRandomImageGen3();
-            randomImageGen();
-            timer.Start();
 
         }
 
-        // From this point on I'm testing and refactoring.
-
-
-        public void testRandomGen1()
+        private void ImageButtonClick(object sender, RoutedEventArgs e)
         {
-
-
-           /* int image;
-            Random random = new Random();
-
-
-            List<Image> paths = new List<Image>();
-
-             imagePos2.Source = paths[random.Next(0, paths.Count - 1)];
-
-             paths.Add(imagePos2.Source);
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg");
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien.jpg");
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg");
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpg");
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg");
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg");
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg");
-             paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg");*/
-        }
-
-       
-
-        public void testRandomImageGen3()
-        {
+            Button a = (Button)sender;
+            
            
-            imageFilePath[0] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\One_eye_alien.jpg";
-            imageFilePath[1] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg";
-            imageFilePath[2] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien.jpg";
-            imageFilePath[3] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg";
-            imageFilePath[4] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpg";
-            imageFilePath[5] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg";
-            imageFilePath[6] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg";
-            imageFilePath[7] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg";
-            imageFilePath[8] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg";
-        }
 
-        private void ChangeImage()
-        {
-            Random random = new Random();
-            // Generate random values between 0 and 5
-            //path[] = Random(NUMBER_OF_FACES - 1);     //random number generated for player 1
-           // Path[PLAYER_TWO] = Random(NUMBER_OF_FACES - 1);     //random number generated for player 2
-          // imagePos1.Source = 
-        }
+            MessageBox.Show(a.Tag.ToString());
+            
 
-        private void ImagePos3_Click(object sender, RoutedEventArgs e)
-        {
-            //MessageBox.Show(imagePos3.Tag.ToString());
 
-            inputOne(int.Parse(imagePos3.Tag.ToString()));
         }
     }
 
 
 
-   /* public void randomGen()
-    {
-        String[] path;
-
-        int image;
-
-
-        path[0] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\One_eye_alien.jpg";
-        path[1] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg";
-        path[2] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien.jpg";
-        path[3] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg";
-        path[4] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpg";
-        path[5] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg";
-        path[6] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg";
-        path[7] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg";
-        path[8] = "C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg";
-
-
-
-        List<String> paths = new List<string>();
-
-        //picBox1.Source = paths[random.Next(0, paths.Count - 1)];
-
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\One_eye_alien.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\two_eyes_alien2.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\four_eye_monster.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\five_eye_alien.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\six_eye_alien2.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\seven_eye_alien.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg");
-        paths.Add("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg");
-    }*/
 }
 
 
