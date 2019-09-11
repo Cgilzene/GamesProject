@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Data.SqlClient;
+using System.Data;
 //using AlienGameDataBase;
 
 namespace AlienGames
@@ -72,7 +73,43 @@ namespace AlienGames
             }
         }
 
-            public MainWindow()
+        private void viewHighScore_Button(object sender, RoutedEventArgs e)
+        {
+           
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand viewCommand = conn.CreateCommand();
+                viewCommand.CommandType = System.Data.CommandType.Text;
+                viewCommand.CommandText = "Select * from AlienGameHighScore ";// ORDER BY Score DESC";
+                viewCommand.ExecuteNonQuery();
+               // SqlDataAdapter dataadp = new SqlDataAdapter(viewCommand);
+                Console.WriteLine(conn.State);
+
+                //String returnedValue = viewCommand.ExecuteScalar().ToString();
+                //MessageBox.Show(returnedValue);
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter("Select * from AlienGameHighScore ORDER BY Score DESC", conn);
+                sda.Fill(dt);
+                MessageBox.Show(dt.Rows[0][0].ToString() + " " + dt.Rows[0][1].ToString() 
+                   + " " + dt.Rows[0][2].ToString());
+                //MessageBox.Show("Data inserted");
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Something happened to server " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        
+
+        public MainWindow()
         {
             InitializeComponent();
 

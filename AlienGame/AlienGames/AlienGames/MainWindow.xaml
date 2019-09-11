@@ -45,7 +45,7 @@
         <Button Name="imagePos9"   Grid.Column="3" Grid.Row="3" Background="White" Click="ImageButtonClick"></Button>
         <Button Name="start" Content="START" Grid.Column="2" Grid.Row="4" Background ="Lavender" Click="Start_Button_Click"></Button>
         <Button Name="Great" Grid.Column="0" Grid.Row="2" Background="Green" Click="Insert_button"></Button>
-        <Button Name="Okay" Grid.Column="0" Grid.Row="3" Background="Yellow" Click="ImageButtonClick"></Button>
+        <Button Name="Okay" Grid.Column="0" Grid.Row="3" Background="Yellow" Click="viewHighScore_Button"></Button>
         <Button Name="MorePractice" Grid.Column="0" Grid.Row="4" Background="Red" Click="ImageButtonClick"></Button>
         <Button Name="check" Content="Check" Grid.Column="1" Grid.Row="4" Background ="LightGreen" Click="Check_Click" HorizontalAlignment="Left" Margin="0,0.2,0,0" Width="198"></Button>
         <Button Name="Clear" Content="Clear" Grid.Column="2" Grid.Row="4" Background="LightCyan" Click="Clear_Click" Grid.ColumnSpan="2" Height="75" Margin="198.2,0.2,-0.4,0" VerticalAlignment="Top"></Button>
