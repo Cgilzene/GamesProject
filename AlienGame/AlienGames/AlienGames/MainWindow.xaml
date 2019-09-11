@@ -16,7 +16,6 @@
         <Image x:Key="sevenEye" Tag="7" Source="C:\Users\Canute Gilzene\Pictures\Pics\seven_eye_alien.jpg" Height="80" Width="80" />
         <Image x:Key="eightEye" Tag="8" Source="C:\Users\Canute Gilzene\Pictures\Pics\eight_eye_alien.jpg" Height="80" Width="80" />
         <Image x:Key="nineEye" Tag="9" Source="C:\Users\Canute Gilzene\Pictures\Pics\nine_eye_alien.jpg" Height="80" Width="80" />
-
     </Window.Resources>
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
@@ -32,54 +31,38 @@
             <RowDefinition Name="row4" Height="79*"></RowDefinition>
             <RowDefinition Name="row5" Height="75*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Merging top 4 Cells" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Grid.Column="1" Height="24" Margin="120.6,35,120.2,38.6" Width="156"></TextBlock>
-        <TextBlock Text="Rowspan=2" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
-        <TextBlock Text="Rowspan=9" Grid.Row="2" Grid.Column="1"  Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="9.6,9.6,9.6,0" Grid.ColumnSpan="3" Height="218" Width="576"></TextBlock>
-        <Button Name="imagePos1" Grid.Column="1" Grid.Row="1" Click="ImageButtonClick"/>
-        <Button Name="imagePos2" Grid.Column="1" Grid.Row="2" Click="ImageButtonClick"></Button>
-        <Button Name="imagePos3" Grid.Column="1" Grid.Row="3" Click="ImageButtonClick"/>
-        <Button Name="imagePos4" Grid.Column="2" Grid.Row="1" Click="ImageButtonClick"></Button>
-        <Button Name="imagePos5" Grid.Column="2" Grid.Row="2" Click="ImageButtonClick"></Button>
-        <Button Name="imagePos6" Grid.Column="2" Grid.Row="3" Click="ImageButtonClick"></Button>
-        <Button Name="imagePos7" Grid.Column="3" Grid.Row="1" Click="ImageButtonClick"></Button>
-        <Button Name="imagePos8" Grid.Column="3" Grid.Row="2" Click="ImageButtonClick"></Button>
-        <Button Name="imagePos9" Content="1"  Grid.Column="3" Grid.Row="3" Click="ImageButtonClick"></Button>
-        <Button Name="check" Content="Check" Grid.Column="0" Grid.Row="4" Background ="LightGreen" Click="Check_Click" HorizontalAlignment="Left" Margin="0,0.2,0,0" Width="198"></Button>
+        <TextBlock Text="" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Grid.Column="1" Height="24" Margin="120.6,35,120.2,38.6" Width="156"></TextBlock>
+        <TextBlock Text="" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+        <TextBlock Text="" Grid.Row="2" Grid.Column="1"  Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="9.6,9.6,9.6,0" Grid.ColumnSpan="3" Height="218" Width="576"></TextBlock>
+        <Button Name="imagePos1" Grid.Column="1" Grid.Row="1" Background="White" Click="ImageButtonClick"/>
+        <Button Name="imagePos2" Grid.Column="1" Grid.Row="2" Background="White" Click="ImageButtonClick"></Button>
+        <Button Name="imagePos3" Grid.Column="1" Grid.Row="3" Background="White" Click="ImageButtonClick"/>
+        <Button Name="imagePos4" Grid.Column="2" Grid.Row="1" Background="White" Click="ImageButtonClick"></Button>
+        <Button Name="imagePos5" Grid.Column="2" Grid.Row="2" Background="White" Click="ImageButtonClick"></Button>
+        <Button Name="imagePos6" Grid.Column="2" Grid.Row="3" Background="White" Click="ImageButtonClick"></Button>
+        <Button Name="imagePos7" Grid.Column="3" Grid.Row="1" Background="White" Click="ImageButtonClick"></Button>
+        <Button Name="imagePos8" Grid.Column="3" Grid.Row="2" Background="White" Click="ImageButtonClick"></Button>
+        <Button Name="imagePos9"   Grid.Column="3" Grid.Row="3" Background="White" Click="ImageButtonClick"></Button>
+        <Button Name="start" Content="START" Grid.Column="2" Grid.Row="4" Background ="Lavender" Click="Start_Button_Click"></Button>
+        <Button Name="Great" Grid.Column="0" Grid.Row="2" Background="Green" Click="ImageButtonClick"></Button>
+        <Button Name="Okay" Grid.Column="0" Grid.Row="3" Background="Yellow" Click="ImageButtonClick"></Button>
+        <Button Name="MorePractice" Grid.Column="0" Grid.Row="4" Background="Red" Click="ImageButtonClick"></Button>
+        <Button Name="check" Content="Check" Grid.Column="1" Grid.Row="4" Background ="LightGreen" Click="Check_Click" HorizontalAlignment="Left" Margin="0,0.2,0,0" Width="198"></Button>
+        <Button Name="Clear" Content="Clear" Grid.Column="2" Grid.Row="4" Background="LightCyan" Click="Clear_Click" Grid.ColumnSpan="2" Height="75" Margin="198.2,0.2,-0.4,0" VerticalAlignment="Top"></Button>
         <Label x:Name="Countdown" Content="00:00" Grid.Column="3" Grid.Row="0" FontFamily="Segoe UI" FontSize="30"
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-        <Button Name="start" Grid.Column="2" Grid.Row="4" Background ="Green" Click="Start_Button_Click"></Button>
-        <TextBox Name="VeiwValue" HorizontalAlignment="Left" Height="23" Margin="52,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="GeneratedValue"   Content="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10.2,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Segoe UI" FontSize="30"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="-1.364,-0.224" Width="178" Height="88" Grid.RowSpan="2"/>
+        <Label Name="ScoreLabel" Content="0" HorizontalAlignment="Left" Margin="9.6,0,0,0" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" Height="98" Width="178" FontFamily="Segoe UI" FontSize="20"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="2"/>
 
-        <!-- <Button Name="btn2" Grid.Column="1" Grid.Row="2" Background ="White" >
-            <DynamicResource ResourceKey="twoEye"/>
-        </Button>
-        <Button Name="btn3" Grid.Column="1" Grid.Row="3" Background ="White">
-            <DynamicResource ResourceKey="threeEye"/>
-        </Button>
-        
-        <Button Grid.Column="1" Grid.Row="4"></Button>
+        <Label Name="VeiwValue" Content="0" HorizontalAlignment="Left" Height="78" Margin="10,10,0,0"  VerticalAlignment="Top" Width="178" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               FontFamily="Segoe UI" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,51.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" RenderTransformOrigin="-0.492,-0.142"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,20.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="66"/>
 
-        <Button Name="btn4" Grid.Column="2" Grid.Row="1" Background ="White">
-            <DynamicResource ResourceKey="fourEye"/>
-        </Button>
-        <Button Name="btn5" Grid.Column="2" Grid.Row="2" Background ="White">
-            <DynamicResource ResourceKey="fiveEye"/>
-        </Button>
-        <Button Name="btn6" Grid.Column="2" Grid.Row="3" Background ="White">
-            <DynamicResource ResourceKey="sixEye"/>
-        </Button>
-        <Button Grid.Column="2" Grid.Row="4" Background ="Green" Click="Button_Click"></Button>
 
-        <Button Name="btn7" Grid.Column="3" Grid.Row="1" Background ="White">
-            <DynamicResource ResourceKey="sevenEye"/>
-        </Button>
-        <Button Name="btn8" Grid.Column="3" Grid.Row="2" Background ="White">
-            <DynamicResource ResourceKey="eightEye"/>
-        </Button>
-        <Button Name="btn9" Grid.Column="3" Grid.Row="3" Background ="White">
-            <DynamicResource ResourceKey="nineEye"/> 
-        </Button>
-        <Button Grid.Column="3" Grid.Row="4"></Button>
--->
+
+
     </Grid>
 </Window>
