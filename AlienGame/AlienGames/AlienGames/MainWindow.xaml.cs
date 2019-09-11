@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Data.SqlClient;
 
 namespace AlienGames
 {
@@ -23,36 +24,39 @@ namespace AlienGames
     public partial class MainWindow : Window
     {
 
-        //List<int> inputvalues = new List<int>();
-        int score;
-        int value1 = 0;
-        private int time = 60;
+        int gameScore;
+        int valueOfButtons = 0;
+        int generatedNum1;
+        int generatedNum2;
+        int sumOfGenNum;
+        Int32 bttn1, bttn2, bttn3, bttn4, bttn5, bttn6, bttn7, bttn8, bttn9;
+        private int timeInSecs = 60;
         private DispatcherTimer timer;
+        Random randomValue;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            
-            score = 0;
+            gameScore = 0;
         }
 
         void stopWatch(object sender, EventArgs e)
         {
-            if (time > 0)
+            if (timeInSecs > 0)
 
             {
-                if (time % 6 == 0)
+                if (timeInSecs % 6 == 0)
                 {
                     randomImageGen();
-                    numberGenerator();
+                    NumberGenerator();
                     GeneratedValue.Foreground = Brushes.Blue;
 
                 }
 
-                if (time <= 10)
+                if (timeInSecs <= 10)
                 {
-                    if (time % 1 == 0)
+                    if (timeInSecs % 1 == 0)
                     {
                         Countdown.Foreground = Brushes.Red;
                     }
@@ -62,88 +66,61 @@ namespace AlienGames
                         Countdown.Foreground = Brushes.White;
 
                     }
-                    time--;
-                    Countdown.Content = string.Format("00:0{0}:0{1}", time / 60, time % 60);
+                      timeInSecs--;
+                      Countdown.Content = string.Format("00:0{0}:0{1}", timeInSecs / 60, timeInSecs % 60);
                 }
                 else
                 {
-                    time--;
-                    Countdown.Content = string.Format("00:0{0}:0{1}", time / 60, time % 60);
+                    timeInSecs--;
+                    Countdown.Content = string.Format("00:0{0}:0{1}", timeInSecs / 60, timeInSecs % 60);
                 }
 
             }
             else
             {
                 timer.Stop();
-                MessageBox.Show("Game Over! Your score is : " + score);
+                MessageBox.Show("Game Over! Your gameScore is : " + gameScore);
                 
             }
 
         }
 
-
-
-        public void numberGenerator()
+        public void NumberGenerator()
         {
-            Random randomValue = new Random();
-            int num1;
-            int num2;
-            num1 = randomValue.Next(1, 9);
-            num2 = randomValue.Next(1, 9);
-            //num1 = value1;
-            //num2 = value2;
-            int sumOf = num1 + num2;
-            
-
-            GeneratedValue.Content =  sumOf.ToString();
+            randomValue = new Random();
+            generatedNum1 = randomValue.Next(1, 9);
+            generatedNum2 = randomValue.Next(1, 9);
+            sumOfGenNum = generatedNum1 + generatedNum2;
+            GeneratedValue.Content =  sumOfGenNum.ToString();
             GeneratedValue.Foreground = Brushes.Blue;
-            value1 = 0;
+            valueOfButtons = 0;
         }
 
-        //This button is in position 1,1
-
-        private void Start_Button_Click(object sender, RoutedEventArgs e) //This button starts the game
-        {
-            //value1 = 0;
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Tick += stopWatch;
-            //dt.Stop();
-            // path = new string[Value_Of_Image];      // _diceImages is set to the value given to NUMBER_OF_FACES
-            // testRandomImageGen3();
-            //randomImageGen();
-            timer.Start();
-            //randomImageGen();
-            //numberGenerator();
-        }
-
-        // From this point on I'm testing and refactoring.
-
-
+      
 
         public void randomImageGen()
         {
 
-            Int32 bttn1, bttn2, bttn3, bttn4, bttn5, bttn6, bttn7, bttn8, bttn9;
+           
             Random randomPic = new Random();
-            bttn1 = randomPic.Next(1, 9);
-            bttn2 = randomPic.Next(1, 9);
-            bttn3 = randomPic.Next(1, 9);
-            bttn4 = randomPic.Next(1, 9);
-            bttn5 = randomPic.Next(1, 9);
-            bttn6 = randomPic.Next(1, 9);
-            bttn7 = randomPic.Next(1, 9);
-            bttn8 = randomPic.Next(1, 9);
-            bttn9 = randomPic.Next(1, 9);
+            bttn1 = randomPic.Next(1, 10);
+            bttn2 = randomPic.Next(1, 10);
+            bttn3 = randomPic.Next(1, 10);
+            bttn4 = randomPic.Next(1, 10);
+            bttn5 = randomPic.Next(1, 10);
+            bttn6 = randomPic.Next(1, 10);
+            bttn7 = randomPic.Next(1, 10);
+            bttn8 = randomPic.Next(1, 10);
+            bttn9 = randomPic.Next(1, 10);
 
 
-            /* BitmapImage image1 = new BitmapImage();
-             Image img3 = new Image();
-             image1.BeginInit();
-             image1.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\One_eye_alien.jpg");
-             image1.EndInit();
-             img3.Source = image1;
-             btn0.Content = img3;*/
+            /*BitmapImage image10 = new BitmapImage();
+             Image img10 = new Image();
+             image10.BeginInit();
+             image10.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
+             image10.EndInit();
+             img10.Source = image10;
+             Great.Content = img10;*/
 
             switch (bttn1)
             {
@@ -234,27 +211,17 @@ namespace AlienGames
                     //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\eight_eye_alien.jpg"));
                     break;
                 case 9:
-                    /* BitmapImage image9 = new BitmapImage();
-                     Image img9 = new Image();
-                     image9.BeginInit();
-                     image9.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg");
-                     image9.EndInit();
-                     img9.Source = image9;
-                     imagePos1.Content = img9;
-                     imagePos1.Tag = 9;
-                     //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg"));
-                     break;*/
-
                     BitmapImage image9 = new BitmapImage();
                     Image img9 = new Image();
                     image9.BeginInit();
-                    image9.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image9.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image9.EndInit();
                     img9.Source = image9;
                     imagePos1.Content = img9;
                     imagePos1.Tag = 9;
                     break;
             }
+
             switch (bttn2)
             {
                 case 1:
@@ -347,7 +314,7 @@ namespace AlienGames
                     BitmapImage image29 = new BitmapImage();
                     Image img29 = new Image();
                     image29.BeginInit();
-                    image29.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image29.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image29.EndInit();
                     img29.Source = image29;
                     imagePos2.Content = img29;
@@ -448,7 +415,7 @@ namespace AlienGames
                     BitmapImage image39 = new BitmapImage();
                     Image img39 = new Image();
                     image39.BeginInit();
-                    image39.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image39.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image39.EndInit();
                     img39.Source = image39;
                     imagePos3.Content = img39;
@@ -549,7 +516,7 @@ namespace AlienGames
                     BitmapImage image49 = new BitmapImage();
                     Image img49 = new Image();
                     image49.BeginInit();
-                    image49.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image49.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image49.EndInit();
                     img49.Source = image49;
                     imagePos4.Content = img49;
@@ -650,7 +617,7 @@ namespace AlienGames
                     BitmapImage image59 = new BitmapImage();
                     Image img59 = new Image();
                     image59.BeginInit();
-                    image59.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image59.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image59.EndInit();
                     img59.Source = image59;
                     imagePos5.Content = img59;
@@ -751,7 +718,7 @@ namespace AlienGames
                     BitmapImage image69 = new BitmapImage();
                     Image img69 = new Image();
                     image69.BeginInit();
-                    image69.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image69.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image69.EndInit();
                     img69.Source = image69;
                     imagePos6.Content = img69;
@@ -852,7 +819,7 @@ namespace AlienGames
                     BitmapImage image79 = new BitmapImage();
                     Image img79 = new Image();
                     image79.BeginInit();
-                    image79.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image79.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image79.EndInit();
                     img79.Source = image79;
                     imagePos7.Content = img79;
@@ -860,7 +827,7 @@ namespace AlienGames
                     //imagePos1.Content = new BitmapImage(new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien.jpg"));
                     break;
             }
-            switch (bttn6)
+            switch (bttn8)
             {
                 case 1:
                     BitmapImage image81 = new BitmapImage();
@@ -952,7 +919,7 @@ namespace AlienGames
                     BitmapImage image89 = new BitmapImage();
                     Image img89 = new Image();
                     image89.BeginInit();
-                    image89.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image89.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image89.EndInit();
                     img89.Source = image89;
                     imagePos8.Content = img89;
@@ -1052,7 +1019,7 @@ namespace AlienGames
                     BitmapImage image99 = new BitmapImage();
                     Image img99 = new Image();
                     image99.BeginInit();
-                    image99.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\three_eye_alien2.jpg");
+                    image99.UriSource = new Uri("C:\\Users\\Canute Gilzene\\Pictures\\Pics\\nine_eye_alien2.jpg");
                     image99.EndInit();
                     img99.Source = image99;
                     imagePos9.Content = img99;
@@ -1062,20 +1029,26 @@ namespace AlienGames
             }
         }
 
-        private void Check_Click(object sender, RoutedEventArgs e)
+        private void Start_Button_Click(object sender, RoutedEventArgs e) //This button starts the game
         {
-            start.IsEnabled = true;
-            //int res = inputvalues.AsQueryable().Sum();
-           // string toDisplay = string.Join(Environment.NewLine, inputvalues);
+
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += stopWatch;
+            timer.Start();
             //randomImageGen();
             //numberGenerator();
-            //MessageBox.Show(res.ToString());
-           // VeiwValue.Text = res.ToString();
-            VeiwValue.Content = value1.ToString();
+        }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            //start.IsEnabled = true;
+            
+            VeiwValue.Content = valueOfButtons.ToString();
             if (GeneratedValue.Content.ToString() == VeiwValue.Content.ToString())
             {
-                score++;
-                ScoreLabel.Content = "Score: " + score;
+                gameScore++;
+                ScoreLabel.Content = "Score: " + gameScore;
             }
             
         }
@@ -1084,31 +1057,15 @@ namespace AlienGames
         {
 
             Button button = (Button)sender;
-
-            value1 += int.Parse(button.Tag.ToString()); //takes in the input1
-
-            //inputvalues.Add(value1);
-           
-           /* while (inputvalues.Count() > 2)
-            {
-                //start.IsEnabled = false;
-                inputvalues.RemoveRange(0,2);
-            }
-
-            if (inputvalues.Count == 2)
-            {
-                start.IsEnabled = false;
-            }*/
-           // string toDisplay = string.Join(Environment.NewLine, inputvalues);
-            //MessageBox.Show(toDisplay);
+            valueOfButtons += int.Parse(button.Tag.ToString()); //takes in the input1
 
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             
-            value1 = 0;
-            VeiwValue.Content = value1.ToString();
+            valueOfButtons = 0;
+            VeiwValue.Content = valueOfButtons.ToString();
         }
     }
 }
