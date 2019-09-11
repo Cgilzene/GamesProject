@@ -1,0 +1,2 @@
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGameDataBase\obj\Debug\AlienGameDataBase.csprojAssemblyReference.cache
+C:\Users\Canute Gilzene\Documents\Engineering_40\HomeWork\Project\AlienGame\AlienGames\AlienGameDataBase\obj\Debug\AlienGameDataBase.csproj.CoreCompileInputs.cache
