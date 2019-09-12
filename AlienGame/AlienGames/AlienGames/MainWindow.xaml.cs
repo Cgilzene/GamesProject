@@ -67,11 +67,7 @@ namespace AlienGames
                         Countdown.Foreground = Brushes.Red;
                     }
 
-                    else
-                    {
-                        Countdown.Foreground = Brushes.White;
-
-                    }
+                 
                       timeInSecs--;
                       Countdown.Content = string.Format("00:0{0}:0{1}", timeInSecs / 60, timeInSecs % 60);
                 }
@@ -1101,7 +1097,6 @@ namespace AlienGames
 
         private void viewHighScore_Button(object sender, RoutedEventArgs e)
         {
-
 
             try
             {

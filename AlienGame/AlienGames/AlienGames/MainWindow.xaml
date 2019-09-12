@@ -58,8 +58,9 @@
 
         <Label Name="VeiwValue" Content="0" HorizontalAlignment="Left" Height="78" Margin="10,10,0,0"  VerticalAlignment="Top" Width="178" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                FontFamily="Segoe UI" FontSize="20"/>
-        <TextBox Name="UsernameBox" HorizontalAlignment="Left" Height="23" Margin="10,51.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" RenderTransformOrigin="-0.492,-0.142"/>
         <Label Content="Name:" HorizontalAlignment="Left" Margin="10,20.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="66"/>
+        <TextBox Name="UsernameBox" HorizontalAlignment="Left" Height="23" Margin="10,51.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" RenderTransformOrigin="-0.492,-0.142"/>
+        
 
 
 
