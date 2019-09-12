@@ -26,11 +26,6 @@ namespace AlienGames
     public partial class MainWindow : Window
     {
        
-
-       // string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CSharpGame;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        //string insertString = String.Format("INSERT INTO AlienGameHighScore(Username, Score, Date) VALUES ('{0}', '{1}', '{2}')", game1.Name, game1.Game1, game1.Type, game1.Review);
-        // string inserting2 = "INSERT INTO GAME (name,game,type,review) VALUES('a','b','c','d')";
-
         SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CSharpGame;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         int gameScore;
@@ -40,74 +35,10 @@ namespace AlienGames
         int sumOfGenNum;
         DateTime time = DateTime.Now;
         string format = "YYYY-MM-DD";
-        
         Int32 bttn1, bttn2, bttn3, bttn4, bttn5, bttn6, bttn7, bttn8, bttn9;
         private int timeInSecs = 60;
         private DispatcherTimer timer;
         Random randomValue;
-
-        private void Insert_button(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                conn.Open();
-
-                SqlCommand insertCommand = conn.CreateCommand();
-                insertCommand.CommandType = System.Data.CommandType.Text;
-                insertCommand.CommandText = "INSERT INTO AlienGameHighScore(Username, Score, Date) VALUES ('"+ UsernameBox.Text +"', '"+ gameScore + "', '" + time + "')";
-                //insertCommand.Parameters.AddWithValue("@value", date);
-                string insert = @" insert into Table(DateTime Column) values ('" + time.ToString(format) + "')";
-                Console.WriteLine(conn.State);
-
-                insertCommand.ExecuteNonQuery();
-                MessageBox.Show("Data inserted");
-            }
-            catch (SqlException ex)
-            {
-
-                MessageBox.Show("Something happened to server " + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-        private void viewHighScore_Button(object sender, RoutedEventArgs e)
-        {
-           
-
-            try
-            {
-                conn.Open();
-
-                SqlCommand viewCommand = conn.CreateCommand();
-                viewCommand.CommandType = System.Data.CommandType.Text;
-                viewCommand.CommandText = "Select * from AlienGameHighScore ";// ORDER BY Score DESC";
-                viewCommand.ExecuteNonQuery();
-               // SqlDataAdapter dataadp = new SqlDataAdapter(viewCommand);
-                Console.WriteLine(conn.State);
-
-                //String returnedValue = viewCommand.ExecuteScalar().ToString();
-                //MessageBox.Show(returnedValue);
-                DataTable dt = new DataTable();
-                SqlDataAdapter sda = new SqlDataAdapter("Select * from AlienGameHighScore ORDER BY Score DESC", conn);
-                sda.Fill(dt);
-                MessageBox.Show(dt.Rows[0][0].ToString() + " " + dt.Rows[0][1].ToString() 
-                   + " " + dt.Rows[0][2].ToString());
-                //MessageBox.Show("Data inserted");
-            }
-            catch (SqlException ex)
-            {
-
-                MessageBox.Show("Something happened to server " + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
 
         public MainWindow()
         {
@@ -170,8 +101,6 @@ namespace AlienGames
             GeneratedValue.Foreground = Brushes.Blue;
             valueOfButtons = 0;
         }
-
-      
 
         public void randomImageGen()
         {
@@ -1141,6 +1070,63 @@ namespace AlienGames
             
             valueOfButtons = 0;
             VeiwValue.Content = valueOfButtons.ToString();
+        }
+
+        private void Insert_button(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand insertCommand = conn.CreateCommand();
+                insertCommand.CommandType = System.Data.CommandType.Text;
+                insertCommand.CommandText = "INSERT INTO AlienGameHighScore(Username, Score, Date) VALUES ('" + UsernameBox.Text + "', '" + gameScore + "', '" + time + "')";
+                //insertCommand.Parameters.AddWithValue("@value", date);
+                string insert = @" insert into Table(DateTime Column) values ('" + time.ToString(format) + "')";
+                Console.WriteLine(conn.State);
+
+                insertCommand.ExecuteNonQuery();
+                MessageBox.Show("Data inserted");
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Something happened to server " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void viewHighScore_Button(object sender, RoutedEventArgs e)
+        {
+
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand viewCommand = conn.CreateCommand();
+                viewCommand.CommandType = System.Data.CommandType.Text;
+                viewCommand.CommandText = "Select * from AlienGameHighScore ";// ORDER BY Score DESC";
+                viewCommand.ExecuteNonQuery();
+                Console.WriteLine(conn.State);
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter("Select * from AlienGameHighScore ORDER BY Score DESC", conn);
+                sda.Fill(dt);
+                MessageBox.Show(dt.Rows[0][0].ToString() + " " + dt.Rows[0][1].ToString()
+                   + " " + dt.Rows[0][2].ToString());
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Something happened to server " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
