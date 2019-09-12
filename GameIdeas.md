@@ -24,16 +24,16 @@ Difficulties faced:
 As with any project difficulties will arise here are a few challenges id faced: 
 •	Assigning each individual image a number that correlated to the eyes on the image.
 •	Solution: Using the tag element in the WPF to keep track of the images.
-•	Adding the values from different buttons using the same Onclick event handler
-•	Solution: Making the variable public and when a number is pressed updating the variable
+•	Adding the values from different buttons using the same Onclick event handler.
+•	Solution: Making the variable public and when a number is pressed updating the variable.
 
 Improvements to be made:
-Creating a slightly more up to date user interface
-Adding another window to view the high scores
-Create more input fields to add more specific user data
-Find a more efficient way of adding images to buttons
-Using more appropriate images
-Create a start up screen explaining the functions of the game
+Creating a slightly more up to date user interface,
+Adding another window to view the high scores,
+Create more input fields to add more specific user data,
+Find a more efficient way of adding images to buttons,
+Using more appropriate images,
+Create a start up screen explaining the functions of the game,
 
 
 Game 1:
