@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Data.SqlClient;
 using System.Data;
-//using AlienGameDataBase;
 
 namespace AlienGames
 {
@@ -47,6 +46,9 @@ namespace AlienGames
             gameScore = 0;
         }
 
+        //This is where the timer is initialised, when the timer reaches a multiple of 6
+        //an image and number is generated, Once the timer reaches 10 seconds the colour
+        //changes to red.
         void stopWatch(object sender, EventArgs e)
         {
             if (timeInSecs > 0)
@@ -87,6 +89,8 @@ namespace AlienGames
 
         }
 
+        //Here two numbers are genereated and added together to give a sum that is displayed
+        //in the generatedvlaue text box
         public void NumberGenerator()
         {
             randomValue = new Random();
@@ -98,6 +102,7 @@ namespace AlienGames
             valueOfButtons = 0;
         }
 
+        //Here each button is assigned a random image that gets generated when the method is called
         public void randomImageGen()
         {
 
@@ -1029,6 +1034,7 @@ namespace AlienGames
             }
         }
 
+        //The start button starts the timer which begins the whole game
         private void Start_Button_Click(object sender, RoutedEventArgs e) //This button starts the game
         {
 
@@ -1040,6 +1046,8 @@ namespace AlienGames
             //numberGenerator();
         }
 
+        //this check button checks if the selected number is equal to the generated number if correct the 
+        //a score is added everytime 
         private void Check_Click(object sender, RoutedEventArgs e)
         {
             //start.IsEnabled = true;
@@ -1053,6 +1061,7 @@ namespace AlienGames
             
         }
 
+       // everytime the button is pressed the image is generated
         private void ImageButtonClick(object sender, RoutedEventArgs e)
         {
 
@@ -1068,6 +1077,7 @@ namespace AlienGames
             VeiwValue.Content = valueOfButtons.ToString();
         }
 
+        //Inserts name into the database
         private void Insert_button(object sender, RoutedEventArgs e)
         {
             try
@@ -1095,6 +1105,7 @@ namespace AlienGames
             }
         }
 
+        //reterives the highest score from the database 
         private void viewHighScore_Button(object sender, RoutedEventArgs e)
         {
 
